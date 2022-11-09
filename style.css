@@ -1,13 +1,57 @@
+:root{
+    --log-side: 90vw;
+    --max-log-side: 800px;
+    --square-side: calc((var(--log-side) / 10) - 5px);
+    --max-square-side: calc((var(--max-log-side) / 10) - 5px);
+}
+
+body{
+    background-color: #083b4c;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body > div{
+    width: 90vw;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 h1{
     text-align: center;
+    color: white;
 }
+
 #log{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
 }
 #log > div{
-    width: 9vw;
-    height: 9vw;
-    line-height: 9vw;
+    width: var(--square-side);
+    height: var(--square-side);
+    max-width: var(--max-square-side);
+    max-height: var(--max-square-side);
+
     text-align: center;
+    font-size: large;
+    font-weight: 500;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #1389b2;
+}
+
+#log > div.typeFizz{
+    background-color: #0cd6a1;
+}
+#log > div.typeBuzz{
+    background-color: #ffd166;
+}
+#log > div.typeFizzBuzz{
+    background-color: #f0466f;
 }
